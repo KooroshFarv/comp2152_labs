@@ -173,6 +173,20 @@ print("Your belt : ", belt )
 
 
 
+# Lab4 Q7 sort the belt
+belt.sort()
+print("Your belt items sorted as follow ", belt)
+
+# Lab4 Q8 Use the belt
+print(" You saw a monster Quickly use your first item")
+first_item = belt.pop(0)
+if first_item in good_loot_options:
+    health_points = min(6, health_points + 2)
+    print("You used the " + (first_item) + "and Your health changed to " + (health_points))
+elif first_item in bad_loot_options:
+    health_points = max(0, health_points - 2)
+    print("You added the " + (first_item) + "and Your health changed to " + (health_points))
+
 
 input("Analyze the roll (Press enter)")
 # Compare Player vs Monster's strength
@@ -190,7 +204,7 @@ power_roll = random.choice(["Fire Magic ", "Freezing TIme", " Super Hearing"])
 
 #  Lab04 Q3
 m_combat_strength = min(6, m_combat_strength + monster_power[power_roll])
-print("The Monster combat is " + str[m_combat_strength] + " using the " + power_roll + " Magic Power")
+print(f"The Monster combat is {m_combat_strength} using the {power_roll} Magic Power")
 # Loop while the monster and the player are alive. Call fight sequence functions
 print("You meet the monster. FIGHT!!")
 while m_health_points > 0 and health_points > 0:
