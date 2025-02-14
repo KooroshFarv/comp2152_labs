@@ -13,5 +13,17 @@ def save_game(winner, hero_name = "", num_stars=0):
 # lab6 question 5a
 
 
+def load_game():
+    try:
+        with open("save.txt", "r") as file:
+            print("    |    Loading from saved file ..")
+            lines =file.readlines()
+            if lines:
+                last_line = lines[-1].strip()
+                return last_line
+    except FileNotFoundError:
+        print("    |    No pre game found. Start again")
+        return None
+
 
 # lab6 question 5b
